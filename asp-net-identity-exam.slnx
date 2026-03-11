@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Auth-Exam.Api\Auth-Exam.Api.csproj" />
+  <Project Path="Auth-Exam.Infrastructure\Auth-Exam.Infrastructure.csproj" />
+  <Project Path="Auth-Exam.Core\Auth-Exam.Core.csproj" />
+</Solution>
