@@ -1,0 +1,28 @@
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ReSharper files
+.idea/
+*.resharper
+*.resharper.user
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# Application specific
+*.log
+*.sqlite
+*.sqlite3
+appsettings.Development.json
