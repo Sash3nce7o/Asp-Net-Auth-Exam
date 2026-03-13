@@ -25,14 +25,14 @@ namespace Auth_Exam.Core.Services
             
             try
             {
-                // Step 1: Find user by email
+                // Find user by email
                 User? user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
                 {
                     throw new Exception("User not found");
                 }
                 
-                // Step 2: Verify password
+                // Verify password
                 var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
                 if (!passwordValid)
                 {
@@ -40,13 +40,13 @@ namespace Auth_Exam.Core.Services
                     return response;
                 }
                 
-                // Step 3: Get user roles
+                //  Get user roles
                 IList<string> userRoles = await _userManager.GetRolesAsync(user);
                 
-                // Step 4: Generate token
+                // Generate token
                 var token = _tokenProvider.GenerateToken(user, userRoles);
                 
-                // Step 5: Build success response
+                // Build success response
                 response.Data = new LoginResponseViewModel
                 {
                     Id = user.Id,

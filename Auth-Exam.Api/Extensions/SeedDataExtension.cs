@@ -14,10 +14,8 @@ namespace Auth_Exam.Api.Extensions
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-                // Ensure database is created
                 await context.Database.EnsureCreatedAsync();
 
-                // Create roles if they don't exist
                 string[] roles = { "Admin", "User" };
                 foreach (var role in roles)
                 {
@@ -27,7 +25,6 @@ namespace Auth_Exam.Api.Extensions
                     }
                 }
 
-                // Create test user if it doesn't exist
                 string testEmail = "test@example.com";
                 var existingUser = await userManager.FindByEmailAsync(testEmail);
 
@@ -43,7 +40,6 @@ namespace Auth_Exam.Api.Extensions
                     var result = await userManager.CreateAsync(testUser, "Test123!");
                     if (result.Succeeded)
                     {
-                        // Add user to roles
                         await userManager.AddToRoleAsync(testUser, "User");
                     }
                 }

@@ -65,7 +65,7 @@ namespace Auth_Exam.Api.Extensions
             })
             .AddJwtBearer(o =>
             {
-                o.RequireHttpsMetadata = false; // REMOVE before production
+                o.RequireHttpsMetadata = false;
                 o.TokenValidationParameters = new()
                 {
                     IssuerSigningKey = new SymmetricSecurityKey(key),

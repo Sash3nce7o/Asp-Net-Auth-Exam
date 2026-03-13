@@ -12,8 +12,5 @@ namespace Auth_Exam.Core.Models.HTTP
         public string? Message { get; set; }
         public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.OK;
         
-        
-        
-        
     }
 }
